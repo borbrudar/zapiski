@@ -1,0 +1,236 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Algebra}}
+\author{Bor Brudar}
+\date{}
+
+\begin{document}
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+
+\chapter{}
+\section{Osnovne}
+
+
+\dfn{Linearna Kombinacija}{
+	Naj bodo $\vec{a_1},\vec{a_2},\ldots,\vec{a_n}$ poljubni vektorji.
+	Vsak vektor oblike $\alpha_1 \vec{a_1} + \alpha_2 \vec{a_2} \ldots $, kjer so $\alpha_1 \ldots \in \R $, imenujemo linearna kombinacija vektorjev $\vec{a_1} \ldots \vec{a_n}$.
+	Primer: $2 \vec{a_1} + \frac{3}{2} \vec{a_2} - \vec{a_3}$ je linearna kombinacija vektorjev $\vec{a_1},\vec{a_2},\vec{a_3}$.
+}
+
+\dfn{Linearna odvisnost}{
+	Vektorji $\vec{a_1}, \vec{a_2}, \ldots, \vec{a_n}$ so linearno odvisni, kadar lahko enega od njih izrazimo kot linearno kombinacijo ostalih. Vektorji, ki niso linearno odvisni, so linearno neodvisni.
+}
+
+Kadar sta 2 vektorja $\vec{a}$ in $\vec{b}$ linearno odvisna, velja $\vec{b} = \alpha \vec{a}$ ali $\vec{a} = \beta \vec{b}$. $\vec{a}$ in $\vec{b}$ sta vzporedna (t.j. vsaka usmerjena daljica, ki doloca $\vec{a}$, je vzporedna vsaki usmerjeni daljici, ki doloca $\vec{b}$. (Ko krajevna vektorja $\vec{a}$ in $\vec{b}$ (skozi izhodisce) lezita na isti premici).
+
+
+Ce sta $\vec{a}$ in $\vec{b}$ linearno neodvisna, potem vektor $\alpha \vec{a} + \beta \vec{b}$ lezi v ravnini, ki jo dolocata ta dva krajevna vektorja.
+
+\qs{}{Velja tudi obratno? Je vsak vektor iz te ravnine oblike $\alpha \vec{a} + \beta \vec{b}$?}
+
+\sol Skozi koncno tocko vektorja $\vec{r}$ potegnemo vzporednico $\vec{b}$. Ker sta $\vec{a}$ in $\vec{b}$ linearno neodvisna, to ta premica seka premico, ki jo doloca $\vec{a}$ v natanko eni tocki. Vektor od $\vec{0}$ do te tocke je $\alpha \vec{a}$ za $\alpha \in \R$. Vektor od te tocke do konca $\vec{r}$ je oblike $ \beta \vec{b} ,\beta \in \R$. Od tod sledi $\vec{r} = \alpha \vec{a} + \beta \vec{b}$.
+
+
+Dokazali smo, da je ravnina napeta med $\vec{a}$ in $\vec{b}$ mnozica vseh vektorjev oblike $\alpha \vec{a} + \beta \vec{b} \text{,kjer sta } \alpha,\beta \in \R $.
+
+
+\cor{}{Trije krajevni vektorji so linearno odvisni natanko tedaj, ko lezijo na isti ravnini.}
+
+\dfn{Baza prostora}{
+	Trije linearno odvisni vekotrji so baza prostora $\R^3$. (Baza prostora $\R^3$ je mnozica, ki jo sestavljajo 3 linearno neodvisni vektorji.)
+}
+
+
+\nt{ Baza ravnine $\R^2$ je mnozica, ki jo sestavljata 2 linearno neodvisna vektorja.}
+
+
+\clm{}{}{
+	Naj bo ${ \vec{a}, \vec{b}, \vec{c} }$ baza prostora $\R^3$. Vsak vektor $\vec{r} \in \R^3$ lahko zapisemo v obliki $\vec{r} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} ; \alpha, \beta, \gamma \in \R^3$. Tak zapis je enolicen.
+}
+
+\pf{Dokaz: (obstoj in enolicnost)}{
+	Lahko predpostavimo, da so $\vec{a}, \vec{b}, \vec{c}, \vec{r}$ krajevni vektorji.
+
+	Potegnemo premico, ki je vzporedna $\vec{c}$ in poteka skozi koncno tocko $\vec{r}$. Ta premica seka ravnino, ki jo dolocata $\vec{a}$ in $\vec{b}$ v natanko eni tocki. Ker ta tocka lezi na ravnini, je vektor od $\vec{c}$ do te tocke $\alpha \vec{a} + \beta \vec{b} ; \alpha, \beta \in \R$, kot smo dokazali prej. Vektor od te tocke do koncne tocke $\vec{r}$ je $\gamma \vec{c}, \gamma \in \R \implies \vec{r} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c}$.
+
+
+	Enolicnost: Recimo, da je $\vec{r} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} = \alpha^{\prime} \vec{a} + \beta^{\prime} \vec{b} + \gamma^{\prime} \vec{c} \\
+	= (\alpha - \alpha^{\prime}) \vec{a} + (\beta - \beta^{\prime}) \vec{b} + (\gamma - \gamma^{\prime}) \vec{c} = \vec{0}.$
+
+Ce je npr. $\alpha \neq \alpha^{\prime}$ lahko izrazimo $\vec{a}$ kot linearno kombinacijo $\vec{b}$  in $\vec{c}$:
+
+\[
+\vec{a} = - \frac{\beta - \beta^{\prime}}{\alpha - \alpha^{\prime}} \vec{b}- \frac{\gamma - \gamma^{\prime}}{ \alpha - \alpha^{\prime}} \vec{c}
+.\]
+
+Kar je v protislovju z linerano neodvisnostjo $\vec{a},\vec{b}, \vec{c}$. Sledi da $\alpha = \alpha^{\prime}$. Enako za $\beta = \beta^{\prime}$ in $\gamma = \gamma^{\prime}$.
+}
+
+\cor{}{Stirje vektorji v $\R^3$ so vedno linearno odvisni.}
+
+\ex{Primer baze}{
+	Definirajmo $ \vec{i} = (1,0,0), \vec{j} = (0,1,0)$ in $\vec{k} = (0,0,1)$. Mnozica ${ \vec{i}, \vec{j}, \vec{k}}$ je baza prostora $\R^3$,ki ji pravimo standardna baza.
+
+	Ce $(x,y,z) \in \R^3$, ga razvijemo po standardni bazi tako: \[
+		(x,y,z) = x \vec{i} + y \vec{j} + z \vec{k}
+	.\]
+}
+
+\nt{
+	Standardna baza v $\R^2$ je ${\vec{i},\vec{j}}$. Kjer je $
+	\vec{i} = (1,0), \vec{j} = (0,1)$.
+}
+
+
+\clm{}{}{
+	Vektorji $\vec{a},\vec{b},\vec{c} \in \R^3$ so linearno neodvisni natanko takrat, ko velja naslednje:
+
+	Ce je $\alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} = \vec{0}$, potem je $\alpha = \beta = \gamma = 0.$
+}
+
+\nt{
+	Ce $\alpha = \beta = \gamma = 0$, potem je $
+	\alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} = \vec{0}$.
+	To je obratno od trditve. Ce so linerano odvisne, so lahko $\vec{0}$, tudi ce niso vsi $\alpha, \beta, \gamma = 0$.
+}
+
+\pf{Dokaz}{
+	($\implies$)
+	Predpostavimo, da so $\vec{a}, \vec{b}, \vec{c}$ linearno neodvisni.
+
+
+	Recimo, da velja $\alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} = \vec{0}$ za $ \alpha, \beta, \gamma \in \R$.
+
+
+	Ce je $\alpha \neq 0$, lahko $\vec{a} = - \frac{\beta}{\alpha} \vec{b} - \frac{\gamma}{\alpha} \vec{c}$, kar je v protislovju z linerano neodvisnostjo $\vec{a},\vec{b},\vec{c}$. Isto za $\beta, \gamma$.
+
+	($\impliedby$) Predpostavimo, da velja sklep, da iz $\alpha \vec{a} + \beta \vec{b} + \gamma \vec{c} = \vec{0}$. Sledi $\alpha = \beta = \gamma = 0$. Dokazujemo da so $\vec{a}, \vec{b}, \vec{c}$ linearno neodvisni.
+
+	Recimo, da niso : potem je eden od njih linearna kombinacija ostalih dveh. Predpostavimo lahko, da je to $\vec{a}$.
+
+	\[
+	\vec{a} = \beta \vec{b} + \gamma \vec{c} , \beta,\gamma \in \R \\
+	\implies - \vec{a} + \beta \vec{b} + \gamma \vec{c} = 0
+	.\]
+
+	To je v nasprotju z zacetno predpostavko. $\vec{a},\vec{b},\vec{c}$ so torej linearno neodvisni.
+}
+
+
+\section{Skalarni produkt}
+
+\dfn{Skalarni produkt vektorjev}{
+
+	Skalarni produkt vektorjev
+	$\vec{a_1} = (x_1, y_1, y_1)$ in $\vec{a_2} = (x_2, y_2, z_2)$ je
+	stevilo $\vec{a_1} \vec{a_2} = x_1 x_2 + y_1 y_2 + z_1 z_2$.
+}
+
+
+Lastnosti skalarnega produkta:
+
+\begin{enumerate}
+	\item Komutativnost: $\vec{a} \vec{b} = \vec{b} \vec{a}; \forall \vec{a}, \vec{b} \in \R^3$
+	\item Distributivnost: $\vec{a}(\vec{b} + \vec{c}) = \vec{a}\vec{b} + \vec{a} \vec{c} ; \forall \vec{c},\vec{b} \in \R^3$
+	\item Homogenost: $ (\alpha \vec{a}) \vec{b} = \alpha(\vec{a} \vec{b}) = \beta(\alpha \vec{b}) ; \alpha \in \R$
+	\item Pozitivna definitnost: $\vec{a} \vec{a} = 0 ,\forall \vec{a} \in \R^3$. In pa $\vec{a} \vec{a} = 0$, kadar $\vec{a} = \vec{0}$
+\end{enumerate}
+
+Asociativnost je neumnost: $(\vec{a} \vec{b}) \vec{c} \neq \vec{a} (\vec{b} \vec{c})$. (Prvi oklepaj je vzporeden $\vec{c}$, drugi pa vzporeden $\vec{a}$.
+
+
+Lastnosti dokazemo tako, da vektorje napisemo po komponentah in poracunamo obe strani enakosti.
+
+Npr. (4) : Naj bo $\vec{a} = (x,y,z)$
+
+\[
+\vec{a}\vec{a} = x x + y y + z z = x^2 + y^{2} + z^{2} \ge 0
+.\]
+
+(1) do (4) so aksiomi za skalarni produkt, ko obravnavamo vektorske prostore s skalarnim produktom.
+
+\dfn{Dolzina (norma) vektorja}{
+	Dolzina (norma) vektorja $\vec{a} \in \R^3$ je stevilo $\|\vec{a}\| = \sqrt{\vec{a}\vec{a}} $.
+}
+
+
+Ce $\vec{a} = (x,y,z) $ krajevni vektor je $\|\vec{a}\| = \sqrt{x^{2} + y^{2} + z^{2}} $, kar je dolzina usmerjene daljice, ki pripada temu vektorju.
+
+
+Dolzina vektorja je torej enaka dolzini vsake usmerejene daljice, ki pripada temu vektorju.
+
+\thm{}{
+
+	\[ \vec{a} \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos \phi,\]
+	$\phi$ je kot (med $0$ in $\pi$) med usmerjenima daljicama s skupnim zacetkom.
+}
+
+\pf{Dokaz}{
+
+	Slikca manka lol
+
+	Kosinusni izrek: $\|\vec{b} - \vec{a}\| = \|\vec{b}\|^{2} + \|\vec{a}\|^{2} - 2 \|\vec{a}\| \|\vec{b}\| \cos \phi$.
+
+	Upostevamo, da je $\|\vec{b} - \vec{a}\|^{2} = (\vec{b} - \vec{a}) (\vec{b} - \vec{c})$ in to poracunamo po distributivnosti.
+
+	\[
+	\vec{b} \vec{b} - \vec{a} \vec{b} - \vec{b} \vec{a} + \vec{a} \vec{a} = \vec{b} \vec{b} + \vec{a} \vec{a} - 2 \|\vec{a}\| \|\vec{b}\| \cos \phi
+	\]
+
+	\[
+-2 \vec{a} \vec{b} \implies \vec{a} \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos \phi.\]
+}
+
+
+Dokaz kosinusnega izreka brez skalarnega produkta: (slika lol)
+
+
+Pitagorov izrek :
+\[a^{2} = (b \sin \alpha)^{2} + (c -\cos \alpha)^{2} = b^{2}\sin^{2}\alpha + c^{2} - 2bc \cos \alpha + b^{2} \cos^{2} \alpha) = b^{2} + c^{2} - 2bc \cos \alpha.\]
+
+Razmislek za topokotni trikotnik??
+
+
+Dokaz Pitagorejskega izreka brez kosinusnega izreka in brez vektorjev. (spet slika)
+
+\[
+P = (a+b)^{2} = c^{2} + 4 \frac{ab}{2} = a^{2} + b^{2} + 2ab = c^{2} + 2ab = a^{2} + b^{2} = c^{2}
+.\]
+
+Dogovorimo se, da je $\vec{0}$ pravokoten na vsak vektor.
+
+\cor{}{
+\[
+\vec{a} \vec{b} = 0 \iff \vec{a} \perp \vec{b}
+.\]
+}
+\ex{}{
+	\begin{enumerate}
+		\item
+	\[
+	\vec{i} \vec{j} = \vec{i} \vec{k} = \vec{j} \vec{k} = 0
+	.\]
+	Standardni bazni vektorji so si med sabo pravokotni.
+
+	\item Izracunaj kot med $\vec{a} = (1,1,2)$ in $\vec{b} = (1,0,1)$
+
+	\[
+	\vec{a} \vec{b}  = \|\vec{a}\| \|\vec{b}\| \cos \phi
+	.\]
+	\[
+	\cos \phi = \frac{\vec{a} \vec{b}}{\|\vec{a}\| \|\vec{b}\|} = \frac{1 1 + 1 0 + 2 1}{\sqrt{6} + \sqrt{2}}  = \frac{3}{2\sqrt{3} }
+	.\]
+	\end{enumerate}
+}
+
+\end{document}
