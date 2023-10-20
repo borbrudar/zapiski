@@ -229,7 +229,131 @@ Dogovorimo se, da je $\vec{0}$ pravokoten na vsak vektor.
 	\[
 	\cos \phi = \frac{\vec{a} \vec{b}}{\|\vec{a}\| \|\vec{b}\|} = \frac{1 1 + 1 0 + 2 1}{\sqrt{6} + \sqrt{2}}  = \frac{3}{2\sqrt{3} }
 	.\]
+
+
+	\item $\vec{a_1} = (x_1,y_1,0)$ in $\vec{a_2} = (x_2,y_2,0)$ vektorja v ravnini $z=0$. Z $\vec{a_1}$ in $\vec{a_2}$ izrazi ploscino P paralelograma vpetega med $\vec{a_1}$ in $\vec{a_2}$.
+
+		(slikca)
+
+		Naj po $\phi$ kot med $\vec{a_1}$ in $\vec{a_2}$. Potem $\phi = \|\vec{a_1}\| \|\vec{a_2}\| \sin \phi$.
+
+		Predpostavimo da je par $\vec{a_1},\vec{a_2}$ pozitivno orientiran. Vektor $\vec{a_1}$ zavrtimo za $\frac{\pi}{2}$ v + smer. Dobljeni vektor ke $\vec{a_1}^{\prime}$ in naj bo $\psi$ kot med  $\vec{a_1}^{\prime}$ in $\vec{a_2}$.
+
+		\[\psi = \begin{cases}
+			\frac{\pi}{2} - \phi ;\phi \le \frac{\pi}{2} \text{V obeh primerih je $\cos \psi = \sin \phi$} \\
+			\phi - \frac{\pi}{2}; \phi > \frac{\pi}{2}
+		\end{cases}\]
+
+		\[\implies P = \|\vec{a_1}\| \|\vec{a_2}\| \sin \phi = \|\vec{a_1}\| \|\vec{a_2}\| \cos \phi = \vec{a_1}^{\prime} \vec{a_2}\]
+
+
+		Naj bo $\theta$ kot med $\vec{a}1$ in x-osjo.
+
+		(slika spet omfg wtffdsdasdas)
+
+		Potem je $\vec{a_1} = ( \|\vec{a_1}\| \cos \theta, \|\vec{a_1}\| \sin \theta , 0)  \implies \vec{a_1}^{\prime} =  (\|\vec{a_1}\| \cos{\phi + \frac{\pi}{2}} , \|\vec{a_1}\| \sin{\phi + \frac{\pi}{2}}, 0)  = ( - \|\vec{a_1}\| \sin \phi, \|\vec{a_1}\| \cos \theta ,0) = (- y_1, x_1,0) \implies P = \vec{a_1}^{\prime} \vec{a_2} = -y_1 x_2 + x_1 y_2$.
+
+		\nt{ Ce bi bil par $\vec{a_1},\vec{a_2}$ negativno orientiran, bi dobili $P = y_1 x_2 - x_1 y_2$.}
 	\end{enumerate}
 }
+
+Izraz $x_1 y_2 - y_1 x_2$ nam torej pove produkt ploscin paralelograma in orientacije para vektorjev $\vec{a_1},\vec{a_2}$.
+
+Izraz $x_1 y_2 - y_1 x_2$ imenujemo determinanta reda 2 in jo oznacimo z
+
+\[
+\begin{vmatrix}
+     x_1 & y_1 \\
+     x_2 & y_2
+\end{vmatrix}
+\]
+
+Determinanta je torej produkt ploscine paralelograma in orientacije.
+
+
+Sledi tudi: Vektorja $(\vec{x_1},\vec{y_1}$ in $(\vec{x_2},\vec{y_2}$ sta linearno odvisna natanko tedaj, ko
+
+\[
+\begin{vmatrix}
+     x_1 & y_1 \\
+     x_2 & y_2
+\end{vmatrix}  = 0
+\
+.\]
+
+
+\section{Vektorski produkt}
+
+\dfn{Vektorski produkt}{
+	Vektorski produkt $\vec{a}$ in $\vec{b}$ je vektor $\vec{a} \times \vec{b}  $, za katerega veljajo naslednje lastnosti:
+
+	\begin{enumerate}
+	\item $\vec{a} \times \vec{b}$ je pravokoten na $\vec{a}$ in na $\vec{b}$
+		\item	dolzina je ploscina paralelograma, napetega na krajevna vektorja $\vec{a}$ in $\vec{b}$
+		\item Trojica $(\vec{a},\vec{b}, \vec{a} \times \vec{b}$ je pozitivno orientirana. To pomeni: ce s konca $\vec{a} \times \vec{b}$ pogledamo na ravnino, ki jo dolocata $\vec{a}$ in $\vec{b}$, potem se $\vec{a}$ zavrti v pozitivni smeri za kot manjsi ali enak $180 \degree$, da dobimo vektor, ki kaze v enako smer kot $\vec{b}$.
+	\end{enumerate}
+}
+
+\cor{}{
+	Ce $\vec{a} \parallel $, potem je $\vec{a} \times \vec{b} = \vec{0}$. Dogovorimo se, da je nicelni vektor vzporeden vsakemu vektorju. Potem velja $ \vec{a} \times \vec{b} = \vec{0} \iff \vec{a} \parallel \vec{b}$.
+}
+
+Naj bo $\vec{a_1} = (x_1,y_1,z_1)$ in $\vec{a_2} = (x_2,y_2,z_2)$. Radi bi izracunali komponente vektorja $\vec{a} \times \vec{b}$.
+Naj bo $\vec{a} \times \vec{b} = (x_3,y_3,z_3)$. Izracunali bomo $z_3$.
+
+$z_3 = (\vec{a} \times \vec{b}) \vec{k}$
+
+Naj bo $\theta$ kot med $(\vec{a_1} \times \vec{a_2}$ in $\vec{k}$. Potem $z_3 = \| \vec{a_1} \times \vec{a_2}  \| \|\vec{k}\| \cos \theta = \|\vec{a_1} \times \vec{a_2}\| \cos \theta$.
+
+Naj bosta $\vec{a_1}^{\prime}$ in $\vec{a_2}^{\prime}$ pravokotni projekciji vektorjev $\vec{a_1}$ in $\vec{a_2}$ na ravnino $z=0$.
+
+
+Ocitno je $\vec{a_1}^{\prime} = (x_1,y_1, 0)$ in $\vec{a_2}^{\prime} = (x_2,y_2,0)$. Ogljisca paralelograma med $\vec{a_1}$ in $\vec{a_2}$ so
+
+\[
+	(0,0,0), (x_1,y_1,z_1), (x_2,y_2,z_2) \text{in} (x_1 + x_2, y_1 + y_2, z_1 + z_2)
+.\]
+
+
+Ce te tocke projeciramo na ravnino $z=0$, dobimo tocke  $(0,0,0), (x_1,y_1,0), (x_2,y_2,0), (x_1 + x_2, y_1 + y_2,0)$ kar so natanko ogljisca paralelograma, napetega na vektorja $\vec{a_1}^{\prime}$ in $\vec{a_2}^{\prime}$. Po primeru iz skalarnega produkta je ploscina tega projeciranega paralelograma enaka
+
+\[
+P^{\prime} = \begin{cases}
+	x_1 y_2 - x_2 y_1 ; (\vec{a_1}^{\prime}, \vec{a_2}^{\prime}) \text{  pozitivna orientacija} \\
+	-x_1 y_2 + x_2 y_1 ; (\vec{a_1}^{\prime}, \vec{a_2}^{\prime}) \text{  negativna orientacija}
+	\end{cases}
+\]
+
+Kaksna je zveza med originalnim in projeciranim paralelogramom?
+
+
+
+(pol je ena neberjljiva slika holy shit ne vem kaj je gor narisanuasjdhaskdjhasj)
+
+
+
+Kot med ravnino, ki jo dolocata $\vec{a_1}$ in $\vec{a_2}$ in ravnino, ki jo dolocata $(\vec{i}, \vec{j})$ (oz. $(\vec{a_1}^{\prime},\vec{a_2}^{\prime})$) je tudi $\theta$.
+
+Naj bo $A$ koncna tocka vektorja  $\vec{a_1}$, $B$ pa koncna tocka vektorja  $\vec{a_2}$, C pa naj bo presecisce premice $OB$ in vzporednice (skozi  $A$) presecisca ravnine, napete med  $\vec{a_1}$ in $\vec{a_2}$ in ravnine $z=0 (\vec{i}, \vec{j})$ ????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
