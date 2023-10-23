@@ -334,24 +334,296 @@ Kaksna je zveza med originalnim in projeciranim paralelogramom?
 
 Kot med ravnino, ki jo dolocata $\vec{a_1}$ in $\vec{a_2}$ in ravnino, ki jo dolocata $(\vec{i}, \vec{j})$ (oz. $(\vec{a_1}^{\prime},\vec{a_2}^{\prime})$) je tudi $\theta$.
 
-Naj bo $A$ koncna tocka vektorja  $\vec{a_1}$, $B$ pa koncna tocka vektorja  $\vec{a_2}$, C pa naj bo presecisce premice $OB$ in vzporednice (skozi  $A$) presecisca ravnine, napete med  $\vec{a_1}$ in $\vec{a_2}$ in ravnine $z=0 (\vec{i}, \vec{j})$ ????
+Naj bo $A$ koncna tocka vektorja  $\vec{a_1}$, $B$ pa koncna tocka vektorja  $\vec{a_2}$, C pa naj bo presecisce premice $OB$ in vzporednice (skozi  $A$) presecisca ravnine, napete med  $\vec{a_1}$ in $\vec{a_2}$ in ravnine $z=0 (\vec{i}, \vec{j})$ ???? (dobr kle nevem glih kaj pise pr men lmao)
+
+
+Tocke $A,B,C$ projeciramo na ravnino  $z=0$ in dobljene tocke oznacimo z crticami. Daljica  $A^{\prime}C^{\prime}$ in $AC$ sta vzporedni in enako dolgi. Kot med visino na  $AC$ in visina na  $A^{\prime}C^{\prime}$ je tudi 0.
+
+\[
+\implies V_{A^{\prime}C^{\prime}} = V_{AC} * |\cos \theta | \\
+\]
+\[
+P_{OA^{\prime}C^{\prime}} = P_{OAC} |\cos \theta |
+.\]
+
+(abs. zaradi topih kotov)
+Na enak nacin bi dokazali, da je ploscina:
+
+\[
+P_{A^{\prime}B^{\prime}C^{\prime}} = P_{ABC} | \cos \theta|
+.\]
+
+Ploscina trikotnika $OAB$ je vsota ali razlika ploscin trikotnikov $OAC$ in  $ABC$. Isto velja za projeciran trikotnik.
+
+\[
+	\implies P_{OA^{\prime}B^{\prime}} = P_{OAB} | \cos \theta |
+.\]
+
+Isto velja za ploscine ustreznih paralelogramov. Torej:
+
+\[
+P^{\prime} = \|\vec{a_1} \times \vec{a_2} \| | \cos \theta | \implies z_3 = \|\vec{a_1} \times \vec{a_2}\| \cos \theta = \begin{cases}
+	P^{\prime} \text{ce je $\theta$ ostri = + orientacija}\\
+	-P^{\prime}  \text{ce je $\theta$ topi = - orientacija}
+\end{cases}
+= x_1 y_2 - x_2 y_1 =
+\begin{vmatrix}
+	x_1 & y_1 \\
+	x_2 & y_2
+
+\end{vmatrix}
+.\]
+
+Na enak nacin dobimo se $x_3 =
+\begin{vmatrix}
+	y_1 & z_1 \\
+	y_2 & z_2
+
+\end{vmatrix}
+$
+in $y_3 =
+\begin{vmatrix}
+	z_1 & x_1 \\
+	z_2 & z_2
+\end{vmatrix}
+= -
+\begin{vmatrix}
+	x_1 & z_1 \\
+	x_2 & z_2
+\end{vmatrix}
+$
+
+
+(x,y,z) ciklicno zamenjamo.
+
+
+\[
+	(x_1,y_1,z_1) \times (x_2,y_2,z_2) = \left(
+	\begin{vmatrix}
+		y_1 & z_1 \\
+		y_2 & z_2
+	\end{vmatrix}
+	, -
+	\begin{vmatrix}
+		x_1 & z_1 \\
+		x_2 & z_2
+	\end{vmatrix}
+	,
+	\begin{vmatrix}
+		x_1 & y_1 \\
+		x_2 & y_2
+	\end{vmatrix}
+	\right)
+.\]
+
+Determinante reda 3. je definirana s predpisom:
+\[
+\begin{vmatrix}
+	a_1 & b_1 & c_1 \\
+	a_2 & b_2 & c_2 \\
+	a_3 & b_3 & c_3 \\
+
+\end{vmatrix}
+= a_1
+\begin{vmatrix}
+	b_2 & c_2  \\
+	b_3 & c_3
+
+\end{vmatrix}
+- b_1
+\begin{vmatrix}
+	a_2 & c_2 \\
+	a_3 & c_3
+
+\end{vmatrix}
++ c_1
+\begin{vmatrix}
+	a_2 & b_2 \\
+	a_3 & b_3
+
+\end{vmatrix}
+\implies (x_1, y_1, z_1) \times (x_2, y_2, z_2) =
+\begin{vmatrix}
+	\vec{i} & \vec{j} & \vec{k} \\
+	x_1 & y_1 & z_1 \\
+	x_2 & y_2 & z_2
+\end{vmatrix}
+.\]
+
+
+Lastnosti vektorskega produkta:
+\begin{enumerate}
+	\item Anti-komutativnost : $\vec{a} \times \vec{b} = - \vec{b} \times \vec{a}$
+	\item Distributivnost: $\vec{a} \times (\vec{b} + \vec{c}) = \vec{a} \times \vec{b} + \vec{a} \times \vec{c} \text{ali} (\vec{b} + \vec{c}) \times \vec{a} = \vec{b} \times \vec{a} + \vec{c} \times \vec{a}$
+	\item Homogenost: $(\alpha \vec{a}) \times \vec{b} = \alpha (\vec{a} \times \vec{b})$
+\end{enumerate}
+
+
+\ex{}{
+	Izracunaj ploscino trikotnika z ogljisci $A(1,0,2), B(2,2,0), C(3,-2,1)$.
+	Po definiciji vektorskega produkta je  $\vec{p} = \frac{1}{2} \| \vec{AB} \times \vec{AC}\|$.
+
+	$\vec{AB} = (1,2,-2)$, $\vec{AC} = (2,-2,-1)$.
+	$\vec{AB} \times \vec{AC} =
+        \begin{vmatrix}
+		\vec{i} & \vec{j} & \vec{k} \\
+		1 & 2 & -2 \\
+		2 & -2 & -1
+        \end{vmatrix}
+        = \left(
+	\begin{vmatrix}
+		2 & -2 \\
+		-2 & -1
+	\end{vmatrix}
+	,-
+	\begin{vmatrix}
+		1 & -2 \\
+		2 & -1
+	\end{vmatrix}
+	\right)
+	= (-6,-3,-6)$
+
+	$p = \frac{1}{2} \| (-6,-3,-6) \|  = \frac{1}{2} \sqrt{36 + 9 + 36} = \frac{1}{2} 9 = \frac{9}{2}$.
+
+}
 
 
 
+\section{Mesani produkt}
+
+Mesani produkt vektorjev $\vec{a}, \vec{b}, \vec{c}$ je stevilo $(\vec{a} \times \vec{b}) \vec{c}$. Oznacili ga bomo z $\left[\vec{a},\vec{b},\vec{c}\right]$.
+
+
+\[
+\left[\vec{a},\vec{b},\vec{c}\right] = (\vec{a} \times \vec{b}) \cdot \vec{c}
+.\]
+
+(Ok zdj sm opazu da sm posazu pisat cdot tk da shikatanai).
+
+
+Naj bo $\vec{a_1} = (x_1, y_1, z_1), \vec{a_2} = (x_2,y_2,z_2), \vec{a_3} = (x_3,y_3,z_3)$.
+
+\[
+	(\vec{a_1} \times \vec{a_2}) \cdot \vec{a_3} =
+	\begin{vmatrix}
+		\vec{i} & \vec{j} & \vec{k} \\
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2
+	\end{vmatrix} \cdot
+	\left( x_3,y_3,z_3 \right)
+	=
+	\left(
+        \begin{vmatrix}
+		y_1 & z_1 \\
+		y_2 & z_2
+        \end{vmatrix}
+	, -
+	\begin{vmatrix}
+		x_1 & z_1 \\
+		x_2 & z_2
+	\end{vmatrix}
+	,
+	\begin{vmatrix}
+		x_1 & y_1 \\
+		x_2 & z_2
+	\end{vmatrix}
+	\right) \cdot (x_3,y_3,z_3) =\]
+	\[
+	= x_3
+	\begin{vmatrix}
+		y_1 & z_1 \\
+		y_2 & z_2
+	\end{vmatrix}
+	, -y_3
+	\begin{vmatrix}
+		x_1 & z_1 \\
+		x_2 & z_2
+
+	\end{vmatrix}
+	, z_3
+	\begin{vmatrix}
+		x_1 & y_1 \\
+		x_2 & y_2
+
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		x_3 & y_3 & z_3 \\
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2
+	\end{vmatrix}
+.\]
 
 
 
+Geometrijska interpretacija mesanega produkta: paralelepepid je geometrijsko telo, doloceno s tremi cetvericami paroma vzporednih robov. (nagnjen kvader).
 
 
+Prostornina $V$ parelepepida je produkt osnovene ploske $p$ in visine $v$. Ppp. je dolocen s tremi vektorji (slike galore) :
+
+ $V = p v$
 
 
+Kot med $\vec{c}$ in visino oznacino z $\delta$.
+
+ \[
+V = p v = \|\vec{a} \times \vec{b}\| \cdot v = \|\vec{a} \times \vec{b}\| \|\vec{c}\| |\cos \delta|
+.\]
+(abs vrednost ce vektor c kaze navzdol).
+(torej + ce (a,b,c) pozitivno orientirani) ali - v nasprotnem primeru).
+
+$ \implies (\vec{a} \times \vec{b}) \cdot \vec{c} \text{  ; } \left( \vec{a}, \vec{b}, \vec{c} \right) $ kadar so $\left( \vec{a},\vec{b},\vec{c} \right) $ pozitivno orientirani in $- \left( \vec{a} \times \vec{b} \right) \cdot \vec{c}$ sicer.
 
 
+Mesani produkt $\left[ \vec{a},\vec{b},\vec{b}  \right] $ je torej produkt prostornine paralepeptida, napetega na $\vec{a},\vec{b}$ in $\vec{c}$ ter orientacije vektorjev.
+
+\cor{}{
+\[
+	\left[ \vec{a},\vec{b},\vec{c}  \right] = \left[ \vec{c},\vec{a},\vec{b}  \right] = \left[ \vec{b},\vec{c},\vec{a} \right] =
+	-\left[ \vec{b},\vec{a},\vec{c}  \right] = -\left[ \vec{c},\vec{b},\vec{a}  \right]  = -\left[ \vec{a},\vec{c},\vec{b}  \right]
+.\]
+
+Ciklicno menjanje ne spremeni orientacije, menjava dveh elementov pa spremeni.
+}
 
 
+\cor{}{
+
+\[
+	\left[ (x_1,y_1,z_1), (x_2,y_2,z_2), (x_3,y_3,z_3) \right]=
+	\begin{vmatrix}
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2 \\
+		x_3 & y_3 & z_3
+
+	\end{vmatrix}
+.\]
+}
+
+\cor{}{
+\[
+	\begin{vmatrix}
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2 \\
+		x_3 & y_3 & z_3
+
+	\end{vmatrix} = 0
+\]
+
+natanko tedaj, ko so vektorji $(x_1,y_1,z_1), (x_2,y_2,z_2),(x_3,y_3,z_3)$ linearno odvisni.
+}
+
+Lastnosti mesanega produkta:
+
+\begin{enumerate}
+	\item Distributivnost v vseh treh faktorjih:
+		$\left[ \vec{a_1} + \vec{a_2}, \vec{b}, \vec{c} \right] =  \left[  \vec{a_1},\vec{b}, \vec{c}  \right] = \left[  \vec{a_2} , \vec{b}, \vec{c} \right]  $
+		enako za ostala dva vektorja.
+	\item Homogenost v vseh treh faktorjih: $\left[  \alpha \vec{a}, \vec{b} , \vec{c}  \right] = \left[  \vec{a}, \alpha \vec{b}, \vec{c}  \right] = \left[  \vec{a}, \vec{b} , \alpha \vec{c}  \right]   = \alpha \left[  \vec{a} , \vec{b} , \vec{c}  \right] $. Preverimo z racunom in upostevamo lastnosti skalarnega in vektorskega produkta.
+\end{enumerate}
 
 
-
+\section{Dvojni vektorski produkt}
 
 
 
