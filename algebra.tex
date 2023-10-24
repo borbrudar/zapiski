@@ -625,6 +625,224 @@ Lastnosti mesanega produkta:
 
 \section{Dvojni vektorski produkt}
 
+$ \left( \vec{a} \times \vec{b} \right) \times \vec{c} = \left( \vec{a} \cdot \vec{c} \right) \cdot \vec{b} - \left( \vec{b} \cdot \vec{c} \right) \times \vec{a} $
+
+
+Dokaz: izracunamo.
+
+Delni geometrijski premislek:
+
+$\vec{a} \times \vec{b} \perp \vec{a}, \vec{b}$
+
+$\left(\vec{a} \times \vec{b} \right) \times \vec{c} \parallel \vec{a} \times \vec{b}$
+
+$\left( am, \times \vec{b} \right) \times \vec{c}$ lezi v ravnini, ki ga dolocata $\vec{a}$ in $\vec{b}$.
+
+$\implies \left( \vec{a} \times \vec{b} \right) \times \vec{c}  = \alpha \vec{a} + \beta \vec{b}$
+
+
+$\left( \vec{a} \times \vec{b} \right) \times \vec{c} \perp \vec{c}  \implies \alpha \left( \vec{a} \cdot \vec{c} \right) + \beta \left( \vec{b} \cdot \vec{c} \right) = 0 $
+
+$\implies \alpha = \gamma \left( \vec{b} \cdot \vec{c} \right) $, $\beta = \gamma \left( \vec{a} \cdot \vec{c} \right) $ za nek $\gamma$. Racun pokaze, da $\gamma = 1$.
+
+\cor{Langrangova identiteta}{
+
+	1. V zgornjo formulo vstavimo $\vec{c} \times \vec{d}$ namesto $\vec{c}$.
+
+	\[
+		\left( \vec{a} \times \vec{b} \right) \times \left( \vec{c} \times \vec{d} \right) = \left(\vec{a} \cdot \left( \vec{c} \times \vec{d} \right)   \right) \cdot \vec{b} = \left( \vec{b} \cdot \left( \vec{c} \times \vec{d} \right)  \right) \cdot \vec{a}
+	\]
+	\[
+		\implies \left( \vec{a} \times \vec{b} \right) \times \left( \vec{c} \times \vec{d} \right) = \left[  \vec{a}, \vec{c}, \vec{d}  \right] \cdot \vec{b} - \left[  \vec{b} ,\vec{c}, \vec{d}  \right] \cdot \vec{a}
+	.\]
+
+	2. S pomocjo tega izpeljemo:
+
+	\[
+		\left( \vec{a} \times \vec{b} \right) \cdot \left( \vec{c} \times \vec{d} \right) = \left[  \vec{a} , \vec{b}, \vec{c} \times \vec{d}  \right] = \vec{a} \cdot \left( \vec{b} \times \left( \vec{c} \times \vec{d} \right)  \right) = - \vec{a} \cdot \left( \left( \vec{c} \times \vec{d} \right) \times \vec{b}  \right) =
+		\]
+		\[- \vec{a} \cdot \left( \left( \vec{c} \cdot \vec{b} \right) \cdot \vec{d} - \left( \vec{b} \cdot \vec{d} \right) \cdot \vec{c}  \right) = \left( \vec{a} \cdot \vec{c} \right)  \cdot \left( \vec{b} \cdot \vec{d} \right) - \left( \vec{a} \cdot \vec{d} \right) \cdot \left( \vec{b} \cdot \vec{c} \right) =
+		\begin{vmatrix}
+			\vec{a} \cdot \vec{c} & \vec{a} \cdot \vec{d}\\
+			\vec{b} \cdot \vec{c} & \vec{b} \cdot \vec{d}
+
+		\end{vmatrix}
+	.\]
+
+
+
+Langrangova identiteta:
+
+\[
+	\left( \vec{a} \times \vec{b} \right) \cdot \left( \vec{c} \times \vec{d} \right) =	\begin{vmatrix}
+			\vec{a} \cdot \vec{c} & \vec{a} \cdot \vec{d}\\
+			\vec{b} \cdot \vec{c} & \vec{b} \cdot \vec{d}
+
+		\end{vmatrix}
+\]
+}
+
+
+Poseben primer: $\vec{c} = \vec{a}, \vec{d} = \vec{b}$:
+
+\[
+\|\vec{a} \times \vec{b}\|^{2} = \|\vec{a}\|^{2} \|\vec{b}\|^{2} - \left( \vec{a} \cdot \vec{b} \right)^{2}
+\]
+
+\[
+\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos \phi
+\]
+
+\[
+\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin \phi
+.\]
+
+
+
+\section{Premica in ravnina v $\R^3$}
+
+\dfn{Enacba ravnine}{
+Enacba ravnine $\Sigma$ je taka enacba v spremenljivkah $(x,y,z)$, da za vsako tocko  $T(a,b,c)$ velja: ce  $T \in  \Sigma$, potem trojica $(a,b,c)$ zadosca enacbi, ce pa tocka ni element ravnine, pa ta trojica ne zadosca enacbi.
+}
+
+\dfn{Normala ravnine}{
+	Normala ravnine $\Sigma$ je vsak nenicelen vektor, ki je pravokoten na  $\Sigma$. Normala ravnine ne doloci enolicno. Vzporedne ravnine imajo isto normalo. Ravnina je enolicno dolocena z normalo in eno tocko na ravnini.
+}
+
+Naj bo $\Sigma$ ravnina z normalo  $\vec{a} = (a,b,c)$ in naj na tej ravnini lezi tocka $T(x_0,y_0,z_0)$. Naj bo se $T(x,y,z)$ poljubna tocka v prostoru.
+
+
+(slika)
+
+\[
+	T \in \Sigma \iff \text{ vektor } \vec{T_{0}T} \text{ lezi na } \Sigma \iff  \vec{T_{0}T} \perp \vec{n} \iff  \vec{T_{0}T} \cdot \vec{n} = 0 \iff \left( \vec{r} - r_0 \right) \cdot \vec{n} = 0
+.\]
+
+*Naj bo vektor $\vec{r_0}$ krajevni vektor tocke $T_0$ in $\vec{r}$ krajevni vektor tocke $T$.
+
+Enacbi  $\vec{n} \cdot \left( \vec{r} - \vec{r_0} \right) = 0 $ pravimo vektorska enacba ravnine.
+
+Po komponentah: $$\left( a,b,c \right) \cdot \left( x - x_0, y - y_0, z - z_0 \right)$$
+$$a (x- x_0) + b(y - y_0) + c(z - z_0) = 0$$
+$$ax + by + cz - ax_0 - by_0 - cz_0 = 0$$
+
+
+Oznacimo $d = -ax_0 - by_0 - cz_0 = - \vec{n} \cdot \vec{r_0}$. Potem dobimo enacbo ravnine:
+
+\[
+ax + by + cz + d = 0
+.\]
+
+Enacba ravnine je torej linerana enacba v spremenljivkah $x,y,z$. Velja tudi obratno: vsaka linearna enacba (v $x,y,z$) je enacba neke ravnine. Normala ravnine z enacbo $ax + by + cz + d = 0$ je vektor  $(a,b,c)$. Vec ravnine ima lahko isto normalo - v tem primeru se enacbe razlikujejo v koeficientu $d$.
+
+
+
+Enacba ravnine (ax..) ni enolicno dolocena z ravnino. Ce jo pomnozimo s poljubno nenicelno konstanto, dobimo enacbo iste ravnine.
+
+
+Pogosto je koristno najti enacbo ravnine za katero je dolzina normala enaka 1. Ce je $\vec{n} = (a,b,c)$ poljubna normala, potem je
+\[
+\frac{\vec{n}}{\|\vec{n}\|} = \frac{(a,b,c)}{\sqrt{a^{2} + b^{2} + c^{2}} }
+\]
+enotska normala (dolzine 1).
+
+
+Potem dobimo enacbo:
+\[
+\frac{a}{\sqrt{a^{2} + b^{2} + c^{2}}} x + \frac{b}{\sqrt{a^{2} + b^{2} + c^{2}}} y + \frac{c}{\sqrt{a^{2} + b^{2} + c^{2}}} + \frac{d}{\sqrt{a^{2} + b^{2} + c^{2}}} = 0
+.\]
+
+Kjer $\|\vec{n}\|^{2} = a^{2} + b^2 + c^2 \neq 0$. Tej enacbi obicajno recemo normalna enacba ravnine. Normalna enacba ravnine je dolocena do mnozenja z -1 natancno.
+
+Enacba ravnine, podane s tremi nekolinearnimi tockami:
+Naj bodo $T_0(x_0,y_0,z_0)$, $T_1(x_1,y_1,z_1)$ in $T_2(x_2,y_2,z_2)$ nekolinearne tocke na ravnini $\Sigma$.
+Naj bodo  $\vec{r_0},\vec{r_1},\vec{r_2}$ njihovi krajevni vektorji.
+
+
+(slika siaksdmaksjdkas0)
+
+$\vec{T_0T_1}$ in $\vec{T_0T_2}$ lezita na isti ravnini in sta linearno neodvisna. Njun vektorski produkt je nenicelni vektor, ki je pravokoten na ravnino $\Sigma \implies$ Za normalo lahko vzamemo $\vec{T_0T_1} \times \vec{T_0T_2}$.
+
+Po enacbi ravnine $\vec{n} \cdot \left( \vec{r} - \vec{r_0} \right) = 0 $
+
+\[
+	\implies (\vec{T_0T_1} \times \vec{T_0T_2} \cdot \left( \vec{r} - \vec{r_0} \right) = 0
+\]
+\[
+	\left( \vec{r_1 - r_0} \times \vec{ r_2 - r_0}\right) \cdot \left( \vec{r} - \vec{r_0} \right) = 0
+\]
+\[
+	\left[  \vec{r_1} - \vec{r_0} , \vec{r_2} - \vec{r_0}, \vec{r} - \vec{r_0} \right] = 0
+.\]
+
+Enacba ravnine skozi tocke $T_0,T_1,T_2$ je torej:
+\[
+	\left[  \vec{r} - \vec{r_0}, \vec{r_1} - \vec{r_0}, \vec{r_2} - \vec{r_0}  \right] = 0
+.\]
+
+Po komponentah:
+\[
+\begin{vmatrix}
+	x-x_0 & y-y_0 & z-z_0 \\
+	x_1-x_0 & y_1-y_0 & z_1 - z_0 \\
+	x_2-x_0 & y_2-y_0 & z_2-z_0
+\end{vmatrix} = 0
+.\]
+
+
+
+Ko to 3x3 determinanto razpisemo, dobimo enacbo oblike $ax + by + cz + d = 0$,kjer so  $a,b,c$ ustrezne poddeterminante reda 2.
+
+\ex{}{
+Doloci enacbo ravnine skozi tocke: $T_0(1,-1,3), T_1(2,0,5), T_2(-3,-1,4)$.
+
+
+Enacba je \[
+0 =
+\begin{vmatrix}
+	x-1 & y + 1 & z-3 \\
+	2-1 & 0 + 1 & 5-3 \\
+	-3-1 & -1+1 & 4-3
+\end{vmatrix}
+\]
+\[
+=
+\begin{vmatrix}
+	x-1 & y+1 & z-3 \\
+       1 & 1 & 2 \\
+       -4 & 0 & 1
+\end{vmatrix}
+= \left( x-1 \right)
+\begin{vmatrix}
+	1 & 2\\
+	0 & 1
+\end{vmatrix}
+- \left( y+1 \right)
+\begin{vmatrix}
+	1 & 2 \\
+	-4 & 1
+\end{vmatrix}
++ \left( z-3 \right)
+\begin{vmatrix}
+	1 & 1\\
+	0 & 1
+\end{vmatrix} = x - 9(y+1) + 4(z-3) = x - 9y + 4z - 22
+.\]
+
+Enacba ravnine je $x - 9y = 4z - 22 = 0$.
+}
+
+
+\section{Razdalja do ravnine}
+
+
+
+
+
+
+
+
+
 
 
 
